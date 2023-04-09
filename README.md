@@ -11,6 +11,5 @@ https://github.com/martynukvaleria <br />
 https://github.com/GuzarevichAnna  <br />
 <br /> 
 New Build <br />
-new version 0.3a <br />
--added constructors <br />
--fixed Entities.
+new version 0.31a <br />
+-added null DAO
