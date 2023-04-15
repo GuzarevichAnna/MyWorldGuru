@@ -11,5 +11,5 @@ https://github.com/martynukvaleria <br />
 https://github.com/GuzarevichAnna  <br />
 <br /> 
 New Build <br />
-new version 0.31a <br />
--added null DAO
+new version 0.4a <br />
+-added sql scripts
