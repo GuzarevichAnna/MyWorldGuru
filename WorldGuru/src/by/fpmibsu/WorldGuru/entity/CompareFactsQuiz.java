@@ -7,13 +7,13 @@ public class CompareFactsQuiz extends ModePrototype{
     String question2;
     String question3;
     String question4;
-    String answer1;
-    String answer2;
-    String answer3;
-    String answer4;
+    Country answer1;
+    Country answer2;
+    Country answer3;
+    Country answer4;
 
     CompareFactsQuiz(String question1, String question2, String question3, String question4,
-                     String answer1, String answer2, String answer3, String answer4){
+                     Country answer1, Country answer2, Country answer3, Country answer4){
         this.question1 = question1;
         this.answer1 = answer1;
         this.question2 = question2;

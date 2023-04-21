@@ -5,12 +5,12 @@ import java.awt.*;
 public class FlagQuiz extends ModePrototype{
     Image flagImage;
 
-    String variant1;
-    String variant2;
-    String variant3;
-    String variant4;
+    Country variant1;
+    Country variant2;
+    Country variant3;
+    Country variant4;
 
-    FlagQuiz(Image flagImage, String variant1, String variant2, String variant3, String variant4){
+    FlagQuiz(Image flagImage, Country variant1, Country variant2, Country variant3, Country variant4){
         this.flagImage = flagImage;
         this.variant1 = variant1;
         this.variant2 = variant2;
