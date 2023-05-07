@@ -11,5 +11,6 @@ https://github.com/martynukvaleria <br />
 https://github.com/GuzarevichAnna  <br />
 <br /> 
 New Build <br />
-new version 0.4a <br />
--added sql scripts
+new version 0.45a <br />
+-fixed sql scripts <br />
+-fixed entities
