@@ -2,6 +2,7 @@ package by.fpmibsu.WorldGuru.entity;
 import java.awt.*;
 
 public class MapQuiz extends ModePrototype {
+    int mapQuiz;
     Image countryShape;
     String inputTxt;
     String clueArea;
@@ -9,7 +10,8 @@ public class MapQuiz extends ModePrototype {
     String cluePopulation;
     String clueContinent;
 
-    MapQuiz(Image countryShape, String inputTxt, String clueFact, String cluePopulation, String clueContinent, String clueArea){
+    MapQuiz(int mapQuiz, Image countryShape, String inputTxt, String clueFact, String cluePopulation, String clueContinent, String clueArea){
+        this.mapQuiz = mapQuiz;
         this.countryShape = countryShape;
         this.inputTxt = inputTxt;
         this.clueFact = clueFact;

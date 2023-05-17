@@ -3,6 +3,7 @@ package by.fpmibsu.WorldGuru.entity;
 import java.awt.*;
 
 public class CompareFactsQuiz extends ModePrototype{
+    int compareFactsQuizID;
     String question1;
     String question2;
     String question3;
@@ -12,8 +13,9 @@ public class CompareFactsQuiz extends ModePrototype{
     Country answer3;
     Country answer4;
 
-    CompareFactsQuiz(String question1, String question2, String question3, String question4,
+    CompareFactsQuiz(int compareFactsQuizID, String question1, String question2, String question3, String question4,
                      Country answer1, Country answer2, Country answer3, Country answer4){
+        this.compareFactsQuizID = compareFactsQuizID;
         this.question1 = question1;
         this.answer1 = answer1;
         this.question2 = question2;

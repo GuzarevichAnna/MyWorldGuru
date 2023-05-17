@@ -1,195 +1,108 @@
-CREATE TABLE [dbo].[User](
-	[ID] [int] NOT NULL,
-	[Nickname] [char](20) NOT NULL,
-	[Password] [nchar](16) NOT NULL,
-	[FlagPassed] [int] NOT NULL,
-	[MapPassed] [int] NOT NULL,
-	[FactQuizPercent] [int] NOT NULL,
-	[MapPercent] [int] NOT NULL,
-	[FlagFailed] [int] NOT NULL,
-	[MapFailed] [int] NOT NULL,
-	[FactQuizFailed] [int] NOT NULL,
-	[CompareFactsFailed] [int] NOT NULL,
-	[UserMark] [real] NOT NULL,
-	[IsAdmin] [int] NOT NULL
-) ON [PRIMARY]
+USE [master]
 GO
 
-CREATE TABLE [dbo].[Country](
-	[Country_ID] [int] NOT NULL,
-	[Name] [char](50) NOT NULL,
-	[Area] [char](50) NOT NULL,
-	[Population] [int] NOT NULL,
-	[Continent] [char](50) NOT NULL,
-	[Fact] [char](50) NOT NULL,
-	[Flag] [image] NOT NULL,
-	[Territory] [image] NOT NULL,
- CONSTRAINT [PK_Country] PRIMARY KEY CLUSTERED 
-(
-	[Country_ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+/****** Object:  Database [WorldGuru]    Script Date: 17.05.2023 10:35:58 ******/
+CREATE DATABASE [WorldGuru]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'WorldGuru', FILENAME = N'C:\Program Files (x86)\Microsoft SQL Server\MSSQL12.SQLEXPRESS\MSSQL\DATA\WorldGuru.mdf' , SIZE = 5120KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'WorldGuru_log', FILENAME = N'C:\Program Files (x86)\Microsoft SQL Server\MSSQL12.SQLEXPRESS\MSSQL\DATA\WorldGuru_log.ldf' , SIZE = 2048KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
 GO
 
-
-CREATE TABLE [dbo].[CompareFactQuiz](
-	[CompareFactQuiz_ID] [int] NOT NULL,
-	[Question1] [nchar](1000) NOT NULL,
-	[Question2] [nchar](1000) NOT NULL,
-	[Question3] [nchar](1000) NOT NULL,
-	[Question4] [nchar](1000) NOT NULL,
-	[Variant1] [int] NOT NULL,
-	[Variant2] [int] NOT NULL,
-	[Variant3] [int] NOT NULL,
-	[Variant4] [int] NOT NULL,
-	[Answer1] [int] NOT NULL,
-	[Answer2] [int] NOT NULL,
-	[Answer3] [int] NOT NULL,
-	[Answer4] [int] NOT NULL,
- CONSTRAINT [PK_CompareFactQuiz] PRIMARY KEY CLUSTERED 
-(
-	[CompareFactQuiz_ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [WorldGuru].[dbo].[sp_fulltext_database] @action = 'enable'
+end
 GO
 
-ALTER TABLE [dbo].[CompareFactQuiz]  WITH CHECK ADD  CONSTRAINT [FK_CompareFactQuiz_Country] FOREIGN KEY([Variant1])
-REFERENCES [dbo].[Country] ([Country_ID])
+ALTER DATABASE [WorldGuru] SET ANSI_NULL_DEFAULT OFF 
 GO
 
-ALTER TABLE [dbo].[CompareFactQuiz] CHECK CONSTRAINT [FK_CompareFactQuiz_Country]
+ALTER DATABASE [WorldGuru] SET ANSI_NULLS OFF 
 GO
 
-ALTER TABLE [dbo].[CompareFactQuiz]  WITH CHECK ADD  CONSTRAINT [FK_CompareFactQuiz_Country1] FOREIGN KEY([Variant2])
-REFERENCES [dbo].[Country] ([Country_ID])
+ALTER DATABASE [WorldGuru] SET ANSI_PADDING OFF 
 GO
 
-ALTER TABLE [dbo].[CompareFactQuiz] CHECK CONSTRAINT [FK_CompareFactQuiz_Country1]
+ALTER DATABASE [WorldGuru] SET ANSI_WARNINGS OFF 
 GO
 
-ALTER TABLE [dbo].[CompareFactQuiz]  WITH CHECK ADD  CONSTRAINT [FK_CompareFactQuiz_Country2] FOREIGN KEY([Variant3])
-REFERENCES [dbo].[Country] ([Country_ID])
+ALTER DATABASE [WorldGuru] SET ARITHABORT OFF 
 GO
 
-ALTER TABLE [dbo].[CompareFactQuiz] CHECK CONSTRAINT [FK_CompareFactQuiz_Country2]
+ALTER DATABASE [WorldGuru] SET AUTO_CLOSE OFF 
 GO
 
-ALTER TABLE [dbo].[CompareFactQuiz]  WITH CHECK ADD  CONSTRAINT [FK_CompareFactQuiz_Country3] FOREIGN KEY([Variant4])
-REFERENCES [dbo].[Country] ([Country_ID])
+ALTER DATABASE [WorldGuru] SET AUTO_SHRINK OFF 
 GO
 
-ALTER TABLE [dbo].[CompareFactQuiz] CHECK CONSTRAINT [FK_CompareFactQuiz_Country3]
+ALTER DATABASE [WorldGuru] SET AUTO_UPDATE_STATISTICS ON 
 GO
 
-CREATE TABLE [dbo].[FactQuiz](
-	[FactQuiz_ID] [int] NOT NULL,
-	[FactText] [nchar](1000) NOT NULL,
-	[Variant1] [int] NOT NULL,
-	[Variant2] [int] NOT NULL,
-	[Variant3] [int] NOT NULL,
-	[Variant4] [int] NOT NULL,
-	[Answer] [int] NOT NULL,
- CONSTRAINT [PK_FactQuiz] PRIMARY KEY CLUSTERED 
-(
-	[FactQuiz_ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+ALTER DATABASE [WorldGuru] SET CURSOR_CLOSE_ON_COMMIT OFF 
 GO
 
-ALTER TABLE [dbo].[FactQuiz]  WITH CHECK ADD  CONSTRAINT [FK_FactQuiz_Country] FOREIGN KEY([Variant1])
-REFERENCES [dbo].[Country] ([Country_ID])
+ALTER DATABASE [WorldGuru] SET CURSOR_DEFAULT  GLOBAL 
 GO
 
-ALTER TABLE [dbo].[FactQuiz] CHECK CONSTRAINT [FK_FactQuiz_Country]
+ALTER DATABASE [WorldGuru] SET CONCAT_NULL_YIELDS_NULL OFF 
 GO
 
-ALTER TABLE [dbo].[FactQuiz]  WITH CHECK ADD  CONSTRAINT [FK_FactQuiz_Country1] FOREIGN KEY([Variant2])
-REFERENCES [dbo].[Country] ([Country_ID])
+ALTER DATABASE [WorldGuru] SET NUMERIC_ROUNDABORT OFF 
 GO
 
-ALTER TABLE [dbo].[FactQuiz] CHECK CONSTRAINT [FK_FactQuiz_Country1]
+ALTER DATABASE [WorldGuru] SET QUOTED_IDENTIFIER OFF 
 GO
 
-ALTER TABLE [dbo].[FactQuiz]  WITH CHECK ADD  CONSTRAINT [FK_FactQuiz_Country2] FOREIGN KEY([Variant3])
-REFERENCES [dbo].[Country] ([Country_ID])
+ALTER DATABASE [WorldGuru] SET RECURSIVE_TRIGGERS OFF 
 GO
 
-ALTER TABLE [dbo].[FactQuiz] CHECK CONSTRAINT [FK_FactQuiz_Country2]
+ALTER DATABASE [WorldGuru] SET  DISABLE_BROKER 
 GO
 
-ALTER TABLE [dbo].[FactQuiz]  WITH CHECK ADD  CONSTRAINT [FK_FactQuiz_Country3] FOREIGN KEY([Variant4])
-REFERENCES [dbo].[Country] ([Country_ID])
+ALTER DATABASE [WorldGuru] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
 GO
 
-ALTER TABLE [dbo].[FactQuiz] CHECK CONSTRAINT [FK_FactQuiz_Country3]
+ALTER DATABASE [WorldGuru] SET DATE_CORRELATION_OPTIMIZATION OFF 
 GO
 
-CREATE TABLE [dbo].[FlagQuiz](
-	[FlagQuiz_ID] [int] NOT NULL,
-	[Country_ID] [int] NOT NULL,
-	[Variant1] [int] NOT NULL,
-	[Variant2] [int] NOT NULL,
-	[Variant3] [int] NOT NULL,
-	[Variant4] [int] NOT NULL,
-	[Answer] [int] NOT NULL,
- CONSTRAINT [PK_FlagQuiz] PRIMARY KEY CLUSTERED 
-(
-	[FlagQuiz_ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+ALTER DATABASE [WorldGuru] SET TRUSTWORTHY OFF 
 GO
 
-ALTER TABLE [dbo].[FlagQuiz]  WITH CHECK ADD  CONSTRAINT [FK_FlagQuiz_Country] FOREIGN KEY([Country_ID])
-REFERENCES [dbo].[Country] ([Country_ID])
+ALTER DATABASE [WorldGuru] SET ALLOW_SNAPSHOT_ISOLATION OFF 
 GO
 
-ALTER TABLE [dbo].[FlagQuiz] CHECK CONSTRAINT [FK_FlagQuiz_Country]
+ALTER DATABASE [WorldGuru] SET PARAMETERIZATION SIMPLE 
 GO
 
-ALTER TABLE [dbo].[FlagQuiz]  WITH CHECK ADD  CONSTRAINT [FK_FlagQuiz_Country1] FOREIGN KEY([Variant1])
-REFERENCES [dbo].[Country] ([Country_ID])
+ALTER DATABASE [WorldGuru] SET READ_COMMITTED_SNAPSHOT OFF 
 GO
 
-ALTER TABLE [dbo].[FlagQuiz] CHECK CONSTRAINT [FK_FlagQuiz_Country1]
+ALTER DATABASE [WorldGuru] SET HONOR_BROKER_PRIORITY OFF 
 GO
 
-ALTER TABLE [dbo].[FlagQuiz]  WITH CHECK ADD  CONSTRAINT [FK_FlagQuiz_Country2] FOREIGN KEY([Variant2])
-REFERENCES [dbo].[Country] ([Country_ID])
+ALTER DATABASE [WorldGuru] SET RECOVERY SIMPLE 
 GO
 
-ALTER TABLE [dbo].[FlagQuiz] CHECK CONSTRAINT [FK_FlagQuiz_Country2]
+ALTER DATABASE [WorldGuru] SET  MULTI_USER 
 GO
 
-ALTER TABLE [dbo].[FlagQuiz]  WITH CHECK ADD  CONSTRAINT [FK_FlagQuiz_Country3] FOREIGN KEY([Variant3])
-REFERENCES [dbo].[Country] ([Country_ID])
+ALTER DATABASE [WorldGuru] SET PAGE_VERIFY CHECKSUM  
 GO
 
-ALTER TABLE [dbo].[FlagQuiz] CHECK CONSTRAINT [FK_FlagQuiz_Country3]
+ALTER DATABASE [WorldGuru] SET DB_CHAINING OFF 
 GO
 
-ALTER TABLE [dbo].[FlagQuiz]  WITH CHECK ADD  CONSTRAINT [FK_FlagQuiz_Country4] FOREIGN KEY([Variant4])
-REFERENCES [dbo].[Country] ([Country_ID])
+ALTER DATABASE [WorldGuru] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
 GO
 
-ALTER TABLE [dbo].[FlagQuiz] CHECK CONSTRAINT [FK_FlagQuiz_Country4]
+ALTER DATABASE [WorldGuru] SET TARGET_RECOVERY_TIME = 0 SECONDS 
 GO
 
-CREATE TABLE [dbo].[MapQuiz](
-	[MapQuiz_ID] [int] NOT NULL,
-	[Country_ID] [int] NOT NULL,
-	[ClueFact] [nchar](1000) NOT NULL,
-	[CluePopulation] [int] NOT NULL,
-	[ClueContinent] [char](50) NOT NULL,
- CONSTRAINT [PK_MapQuiz] PRIMARY KEY CLUSTERED 
-(
-	[MapQuiz_ID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+ALTER DATABASE [WorldGuru] SET DELAYED_DURABILITY = DISABLED 
 GO
 
-ALTER TABLE [dbo].[MapQuiz]  WITH CHECK ADD  CONSTRAINT [FK_MapQuiz_Country] FOREIGN KEY([Country_ID])
-REFERENCES [dbo].[Country] ([Country_ID])
+ALTER DATABASE [WorldGuru] SET  READ_WRITE 
 GO
 
-ALTER TABLE [dbo].[MapQuiz] CHECK CONSTRAINT [FK_MapQuiz_Country]
-GO
