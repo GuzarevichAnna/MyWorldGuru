@@ -9,7 +9,10 @@ Our team: <br />
 https://github.com/NiCHUY <br />
 https://github.com/martynukvaleria <br />
 https://github.com/GuzarevichAnna  <br />
+Special thanks: <br />
+https://github.com/StanislavKhartov  <br />
 <br /> 
 New Build <br />
-new version 0.4a <br />
--added sql scripts
+new version 0.53a <br />
+-fixed sql scripts <br />
+-fixed entities
