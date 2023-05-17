@@ -4,27 +4,44 @@ import java.awt.*;
 
 public class CompareFactsQuiz extends ModePrototype{
     int compareFactsQuizID;
-    String question1;
-    String question2;
-    String question3;
-    String question4;
-    Country answer1;
-    Country answer2;
-    Country answer3;
-    Country answer4;
+    String firstQuestion;
+    String secondQuestion;
+    String thirdQuestion;
+    String foursQuestion;
 
-    CompareFactsQuiz(int compareFactsQuizID, String question1, String question2, String question3, String question4,
-                     Country answer1, Country answer2, Country answer3, Country answer4){
+    Country firstVariant;
+    Country secondVariant;
+    Country thirdVariant;
+    Country foursVariant;
+    int firstAnswer;
+    int secondAnswer;
+    int thirdAnswer;
+    int foursAnswer;
+
+    CompareFactsQuiz(int compareFactsQuizID,
+                     String firstQuestion, String secondQuestion, String thirdQuestion, String foursQuestion,
+                     Country firstVariant, Country secondVariant, Country thirdVariant, Country foursVariant,
+                     int firstAnswer, int secondAnswer, int thirdAnswer, int foursAnswer) {
         this.compareFactsQuizID = compareFactsQuizID;
-        this.question1 = question1;
-        this.answer1 = answer1;
-        this.question2 = question2;
-        this.answer2 = answer2;
-        this.question3 = question3;
-        this.answer3 = answer3;
-        this.question4 = question4;
-        this.answer4 = answer4;
+        this.firstQuestion = firstQuestion;
+        this.secondQuestion = secondQuestion;
+        this.thirdQuestion = thirdQuestion;
+        this.foursQuestion = foursQuestion;
+
+        this.firstVariant = firstVariant;
+        this.secondVariant = secondVariant;
+        this.thirdVariant = thirdVariant;
+        this.foursVariant = foursVariant;
+
+        this.firstAnswer = firstAnswer;
+        this.secondAnswer = secondAnswer;
+        this.thirdAnswer = thirdAnswer;
+        this.foursAnswer = foursAnswer;
+
         this.nameOfRegime = "CompareFactsQuiz";
     }
 
+    public boolean complete() {
+        return true;
+    }
 }

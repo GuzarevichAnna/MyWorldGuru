@@ -2,22 +2,32 @@ package by.fpmibsu.WorldGuru.entity;
 import java.awt.*;
 
 public class MapQuiz extends ModePrototype {
-    int mapQuiz;
-    Image countryShape;
+    int mapQuizID;
+    Country country;
     String inputTxt;
-    String clueArea;
     String clueFact;
-    String cluePopulation;
+    int clueArea;
+    int cluePopulation;
     String clueContinent;
 
-    MapQuiz(int mapQuiz, Image countryShape, String inputTxt, String clueFact, String cluePopulation, String clueContinent, String clueArea){
-        this.mapQuiz = mapQuiz;
-        this.countryShape = countryShape;
+    MapQuiz(int mapQuizID, Country country, String inputTxt, String clueFact, int clueArea, int cluePopulation, String clueContinent) {
+        this.mapQuizID = mapQuizID;
+        this.country = country;
         this.inputTxt = inputTxt;
+
         this.clueFact = clueFact;
-        this.cluePopulation = cluePopulation;
         this.clueArea = clueArea;
+        this.cluePopulation = cluePopulation;
         this.clueContinent = clueContinent;
+
         this.nameOfRegime = "MAP QUIZ";
+    }
+
+    public boolean complete() {
+        if (country.getName().compareTo(inputTxt) == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

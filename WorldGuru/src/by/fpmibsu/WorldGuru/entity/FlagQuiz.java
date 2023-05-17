@@ -4,20 +4,39 @@ import java.awt.*;
 
 public class FlagQuiz extends ModePrototype{
     int flagQuizID;
-    Image flagImage;
-    Country variant1;
-    Country variant2;
-    Country variant3;
-    Country variant4;
+    int answer;
+    Country answerCountry;
+    Country firstVariant;
+    Country secondVariant;
+    Country thirdVariant;
+    Country foursVariant;
 
-    FlagQuiz(int flagQuizID, Image flagImage, Country variant1, Country variant2, Country variant3, Country variant4){
+    FlagQuiz(int flagQuizID, Country answerCountry, Country firstVariant, Country secondVariant, Country thirdVariant, Country foursVariant) {
         this.flagQuizID = flagQuizID;
-        this.flagImage = flagImage;
-        this.variant1 = variant1;
-        this.variant2 = variant2;
-        this.variant3 = variant3;
-        this.variant4 = variant4;
+        this.answerCountry = answerCountry;
+
+        this.firstVariant = firstVariant;
+        this.secondVariant = secondVariant;
+        this.thirdVariant = thirdVariant;
+        this.foursVariant = foursVariant;
+
+        if (answerCountry.getID() == firstVariant.getID()) {
+            this.answer = firstVariant.getID();
+        }
+        if (answerCountry.getID() == secondVariant.getID()) {
+            this.answer = secondVariant.getID();
+        }
+        if (answerCountry.getID() == thirdVariant.getID()) {
+            this.answer = thirdVariant.getID();
+        }
+        if (answerCountry.getID() == foursVariant.getID()) {
+            this.answer = foursVariant.getID();
+        }
+
         this.nameOfRegime = "FLAG QUIZ";
     }
 
+    public boolean complete() {
+        return true;
+    }
 }

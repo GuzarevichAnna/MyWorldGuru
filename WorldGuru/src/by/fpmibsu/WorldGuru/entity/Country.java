@@ -2,7 +2,7 @@ package by.fpmibsu.WorldGuru.entity;
 
 import java.awt.*;
 
-public class Country {
+public class Country extends Comparable{
     int countyID;
     String name;
     float area;
@@ -21,5 +21,20 @@ public class Country {
         this.fact = fact;
         this.flag = flag;
         this.territory = territory;
+    }
+
+    public int getID() {
+        return this.countyID;
+    }
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        if (this.getID() == ((Country)o).getID()) {
+            return 1;
+        }
+        else return -1;
     }
 }
