@@ -9,8 +9,11 @@ Our team: <br />
 https://github.com/NiCHUY <br />
 https://github.com/martynukvaleria <br />
 https://github.com/GuzarevichAnna  <br />
+Special thanks: <br />
+https://github.com/StanislavKhartov  <br />
 <br /> 
 New Build <br />
-new version 0.3a <br />
--added constructors <br />
--fixed Entities.
+new version 0.1s <br />
+-added getters for entities <br />
+-added final DAO <br />
+-made a start for servlets

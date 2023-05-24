@@ -3,20 +3,64 @@ package by.fpmibsu.WorldGuru.entity;
 import java.awt.*;
 
 public class FlagQuiz extends ModePrototype{
-    Image flagImage;
+    int flagQuizID;
+    int answer;
+    Country answerCountry;
+    Country firstVariant;
+    Country secondVariant;
+    Country thirdVariant;
+    Country foursVariant;
 
-    String variant1;
-    String variant2;
-    String variant3;
-    String variant4;
+    public FlagQuiz(int flagQuizID, Country answerCountry, Country firstVariant, Country secondVariant, Country thirdVariant, Country foursVariant) {
+        this.flagQuizID = flagQuizID;
+        this.answerCountry = answerCountry;
 
-    FlagQuiz(Image flagImage, String variant1, String variant2, String variant3, String variant4){
-        this.flagImage = flagImage;
-        this.variant1 = variant1;
-        this.variant2 = variant2;
-        this.variant3 = variant3;
-        this.variant4 = variant4;
+        this.firstVariant = firstVariant;
+        this.secondVariant = secondVariant;
+        this.thirdVariant = thirdVariant;
+        this.foursVariant = foursVariant;
+
+        if (answerCountry.getID() == firstVariant.getID()) {
+            this.answer = firstVariant.getID();
+        }
+        if (answerCountry.getID() == secondVariant.getID()) {
+            this.answer = secondVariant.getID();
+        }
+        if (answerCountry.getID() == thirdVariant.getID()) {
+            this.answer = thirdVariant.getID();
+        }
+        if (answerCountry.getID() == foursVariant.getID()) {
+            this.answer = foursVariant.getID();
+        }
+
         this.nameOfRegime = "FLAG QUIZ";
     }
 
+    public boolean complete() {
+        return true;
+    }
+
+    public Country getAnswerCountry() {
+        return this.answerCountry;
+    }
+
+    public Country getFirstVariant() {
+        return this.firstVariant;
+    }
+
+    public Country getSecondVariant() {
+        return this.secondVariant;
+    }
+
+    public Country getThirdVariant() {
+        return this.thirdVariant;
+    }
+
+    public Country getFourthVariant() {
+        return foursVariant;
+    }
+
+    public int getFlagQuizID() {
+        return this.flagQuizID;
+    }
 }
