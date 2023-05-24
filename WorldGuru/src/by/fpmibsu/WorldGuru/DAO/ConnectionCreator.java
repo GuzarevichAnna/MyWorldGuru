@@ -11,7 +11,7 @@ public class ConnectionCreator {
     private static final String DATABASE_URL;
     static {
         try {
-            properties.load(new FileReader("D:\\WorldGuru\\WorldGuru\\WorldGuru\\WorldGuru\\src\\by\\fpmibsu\\WorldGuru\\Properties\\db.properties"));
+            properties.load(new FileReader("D:\\WorldGuru\\WorldGuru\\WorldGuru\\src\\by\\fpmibsu\\WorldGuru\\Properties\\db.properties"));
             String driverName = (String) properties.get("db.driver");
             Class.forName(driverName);
         } catch (ClassNotFoundException | IOException e) {

@@ -10,10 +10,10 @@ public class MapQuiz extends ModePrototype {
     int cluePopulation;
     String clueContinent;
 
-    public MapQuiz(int mapQuizID, Country country, String clueFact, int clueArea, int cluePopulation, String clueContinent) {
+    public MapQuiz(int mapQuizID, Country country, String inputTxt, String clueFact, int clueArea, int cluePopulation, String clueContinent) {
         this.mapQuizID = mapQuizID;
         this.country = country;
-        this.inputTxt = new String();
+        this.inputTxt = inputTxt;
 
         this.clueFact = clueFact;
         this.clueArea = clueArea;
@@ -32,26 +32,58 @@ public class MapQuiz extends ModePrototype {
     }
 
     public int getMapQuizID() {
-        return this.mapQuizID;
+        return mapQuizID;
+    }
+
+    public void setMapQuizID(int mapQuizID) {
+        this.mapQuizID = mapQuizID;
     }
 
     public Country getCountry() {
-        return this.country;
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
+
+    public String getInputTxt() {
+        return inputTxt;
+    }
+
+    public void setInputTxt(String inputTxt) {
+        this.inputTxt = inputTxt;
     }
 
     public String getClueFact() {
-        return this.clueFact;
+        return clueFact;
+    }
+
+    public void setClueFact(String clueFact) {
+        this.clueFact = clueFact;
     }
 
     public int getClueArea() {
-        return this.clueArea;
+        return clueArea;
+    }
+
+    public void setClueArea(int clueArea) {
+        this.clueArea = clueArea;
     }
 
     public int getCluePopulation() {
-        return this.cluePopulation;
+        return cluePopulation;
+    }
+
+    public void setCluePopulation(int cluePopulation) {
+        this.cluePopulation = cluePopulation;
     }
 
     public String getClueContinent() {
-        return this.clueContinent;
+        return clueContinent;
+    }
+
+    public void setClueContinent(String clueContinent) {
+        this.clueContinent = clueContinent;
     }
 }

@@ -13,7 +13,7 @@ Special thanks: <br />
 https://github.com/StanislavKhartov  <br />
 <br /> 
 New Build <br />
-new version 0.1s <br />
+new version 0.11s <br />
 -added getters for entities <br />
 -added final DAO <br />
--made a start for servlets
+

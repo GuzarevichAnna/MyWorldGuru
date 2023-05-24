@@ -7,7 +7,6 @@
           <element id="module-output" name="WorldGuru" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="WorldGuru/web/Web" />
     </root>
   </artifact>
 </component>

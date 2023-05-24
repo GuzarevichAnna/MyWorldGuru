@@ -30,7 +30,6 @@ public class CompareFactsQuizDao implements ModeDao<Integer, CompareFactsQuiz> {
             statement.setInt(10, compareFactsQuiz.getSecondAnswer());
             statement.setInt(11, compareFactsQuiz.getThirdAnswer());
             statement.setInt(12, compareFactsQuiz.getFourthAnswer());
-
             int rowsInserted = statement.executeUpdate();
             return rowsInserted > 0;
         } catch (SQLException e) {
@@ -62,7 +61,6 @@ public class CompareFactsQuizDao implements ModeDao<Integer, CompareFactsQuiz> {
                 Country variant2 = new CountryDao(connection).read(variant2ID);
                 Country variant3 = new CountryDao(connection).read(variant3ID);
                 Country variant4 = new CountryDao(connection).read(variant4ID);
-
                 return new CompareFactsQuiz(compareFactsQuizID, firstQuestion, secondQuestion, thirdQuestion, fourthQuestion, variant1, variant2, variant3, variant4, firstAnswer, secondAnswer, thirdAnswer, fourthAnswer);
             } else {
                 return null;
@@ -89,7 +87,6 @@ public class CompareFactsQuizDao implements ModeDao<Integer, CompareFactsQuiz> {
             statement.setInt(11, compareFactsQuiz.getThirdAnswer());
             statement.setInt(12, compareFactsQuiz.getFourthAnswer());
             statement.setInt(13, compareFactsQuiz.getCompareFactsQuizID());
-
             int rowsUpdated = statement.executeUpdate();
             if (rowsUpdated > 0) {
                 return compareFactsQuiz;

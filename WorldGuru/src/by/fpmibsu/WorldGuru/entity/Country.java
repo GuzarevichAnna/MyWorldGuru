@@ -10,6 +10,70 @@ public class Country implements Comparable {
     String continent;
     String fact;
     Image flag;
+
+    public Country() {
+    }
+
+    public int getCountyID() {
+        return countyID;
+    }
+
+    public void setCountyID(int countyID) {
+        this.countyID = countyID;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public float getArea() {
+        return area;
+    }
+
+    public void setArea(float area) {
+        this.area = area;
+    }
+
+    public int getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(int population) {
+        this.population = population;
+    }
+
+    public String getContinent() {
+        return continent;
+    }
+
+    public void setContinent(String continent) {
+        this.continent = continent;
+    }
+
+    public String getFact() {
+        return fact;
+    }
+
+    public void setFact(String fact) {
+        this.fact = fact;
+    }
+
+    public Image getFlag() {
+        return flag;
+    }
+
+    public void setFlag(Image flag) {
+        this.flag = flag;
+    }
+
+    public Image getTerritory() {
+        return territory;
+    }
+
+    public void setTerritory(Image territory) {
+        this.territory = territory;
+    }
+
     Image territory;
 
     public Country(int countyID, String name, float area, int population, String continent, String fact, Image flag, Image territory) {
@@ -36,29 +100,5 @@ public class Country implements Comparable {
             return 1;
         }
         else return -1;
-    }
-
-    public float getArea() {
-        return this.area;
-    }
-
-    public int getPopulation() {
-        return this.population;
-    }
-
-    public String getContinent() {
-        return this.continent;
-    }
-
-    public String getFact() {
-        return this.fact;
-    }
-
-    public Image getFlag() {
-        return this.flag;
-    }
-
-    public Image getTerritory() {
-        return this.territory;
     }
 }

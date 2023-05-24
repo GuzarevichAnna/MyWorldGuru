@@ -1,9 +1,7 @@
+import by.fpmibsu.WorldGuru.DAO.ConnectionCreator;
 import by.fpmibsu.WorldGuru.DAO.CountryDao;
 
-import by.fpmibsu.WorldGuru.DAO.ConnectionCreator;
-
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Main {

@@ -63,7 +63,7 @@ public class MapQuizDao implements ModeDao<String, MapQuiz> {
             PreparedStatement statement = connection.prepareStatement(
                     "UPDATE MapQuiz SET Country_ID = ?, ClueFact = ?, ClueArea = ?, CluePopulation = ?, ClueContinent = ? WHERE MapQuiz_ID = ?"
             );
-            statement.setString(1, String.valueOf(mapQuiz.getCountry().getID()));
+            statement.setString(1, String.valueOf(mapQuiz.getCountry().getCountyID()));
             statement.setString(2, mapQuiz.getClueFact());
             statement.setInt(3, mapQuiz.getClueArea());
             statement.setInt(4, mapQuiz.getCluePopulation());
@@ -131,6 +131,6 @@ public class MapQuizDao implements ModeDao<String, MapQuiz> {
         int clueArea = resultSet.getInt("ClueArea");
         int cluePopulation = resultSet.getInt("CluePopulation");
         String clueContinent = resultSet.getString("ClueContinent");
-        return new MapQuiz(mapQuizID, country, clueFact, clueArea, cluePopulation, clueContinent);
+        return new MapQuiz(mapQuizID, country, "", clueFact, clueArea, cluePopulation, clueContinent);
     }
 }
