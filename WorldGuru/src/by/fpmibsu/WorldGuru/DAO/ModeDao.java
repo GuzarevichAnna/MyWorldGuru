@@ -9,7 +9,7 @@ import java.util.List;
 public interface ModeDao <ID, T extends ModePrototype>{
     boolean create(T t) throws DaoException;
     T read(ID id) throws DaoException;
-    T update(ID id) throws DaoException;
+    T update(T t) throws DaoException;
     boolean delete(ID id) throws DaoException;
     List<T> readAll() throws DaoException;
 

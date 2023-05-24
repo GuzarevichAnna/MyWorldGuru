@@ -19,10 +19,10 @@ public class User extends VisitorPrototype {
     int mapFailed;
     int factQuizFailed;
     int compareFactsFailed;
-    User(int ID, String nickname, String password,
-         int flagPassed, int mapPassed, int factQuizPassed, int compareFactsPassed,
-         int flagFailed, int mapFailed, int factQuizFailed, int compareFactsFailed,
-         double userMark, boolean isAdmin) {
+    public User(int ID, String nickname, String password,
+                int flagPassed, int mapPassed, int factQuizPassed, int compareFactsPassed,
+                int flagFailed, int mapFailed, int factQuizFailed, int compareFactsFailed,
+                double userMark, boolean isAdmin) {
         this.ID = ID;
         this.nickname = nickname;
         this.password = password;
@@ -49,5 +49,57 @@ public class User extends VisitorPrototype {
             this.userMark = userMark;
             this.isAdmin = false;
         }
+    }
+
+    public int getID() {
+        return this.ID;
+    }
+
+    public String getNickname() {
+        return this.nickname;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public int getFlagPassed() {
+        return this.flagPassed;
+    }
+
+    public int getMapPassed() {
+        return this.mapPassed;
+    }
+
+    public int getFactQuizPassed() {
+        return this.factQuizPassed;
+    }
+
+    public int getCompareFactsPassed() {
+        return this.compareFactsPassed;
+    }
+
+    public int getFlagFailed() {
+        return this.flagFailed;
+    }
+
+    public int getMapFailed() {
+        return this.mapFailed;
+    }
+
+    public int getFactQuizFailed() {
+        return this.factQuizFailed;
+    }
+
+    public int getCompareFactsFailed() {
+        return this.compareFactsFailed;
+    }
+
+    public double getUserMark() {
+        return this.userMark;
+    }
+
+    public boolean isAdmin() {
+        return this.isAdmin;
     }
 }

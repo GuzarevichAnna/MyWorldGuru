@@ -13,7 +13,7 @@ Special thanks: <br />
 https://github.com/StanislavKhartov  <br />
 <br /> 
 New Build <br />
-new version 1.01a <br />
--fixed sql scripts <br />
--fixed entities <br />
--major changes in some Quizes
+new version 0.1s <br />
+-added getters for entities <br />
+-added final DAO <br />
+-made a start for servlets

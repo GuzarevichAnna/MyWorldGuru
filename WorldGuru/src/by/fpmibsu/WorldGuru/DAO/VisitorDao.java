@@ -1,5 +1,6 @@
 package by.fpmibsu.WorldGuru.DAO;
 
+import by.fpmibsu.WorldGuru.entity.User;
 import by.fpmibsu.WorldGuru.entity.VisitorPrototype;
 
 import java.sql.Connection;
@@ -12,7 +13,7 @@ public interface VisitorDao<ID, T extends VisitorPrototype> {
 
     T read(ID id) throws DaoException;
 
-    T update(ID id) throws DaoException;
+    User update(Integer id, User user) throws DaoException;
 
     boolean delete(ID id) throws DaoException;
 
