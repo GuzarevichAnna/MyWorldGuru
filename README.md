@@ -11,9 +11,3 @@ https://github.com/martynukvaleria <br />
 https://github.com/GuzarevichAnna  <br />
 Special thanks: <br />
 https://github.com/StanislavKhartov  <br />
-<br /> 
-New Build <br />
-new version 0.11s <br />
--added getters for entities <br />
--added final DAO <br />
-
