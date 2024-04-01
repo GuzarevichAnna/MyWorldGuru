@@ -1,9 +1,9 @@
 # WorldGuru Project <br />
 <br />
 Description: <br />
-Application designed to improve your knowledge of geography and history of countries. <br />
-Various game modes will be developed for more flexible pumping of your brains. <br />
-There is some competitive element (Save user high score) <br />
+Application designed to improve the knowledge of geography and history of countries. <br />
+Various game modes have been developed. <br />
+The highest current score is saved for each player which adds competitiveness to the game. <br />
 <br />
 Our team: <br />
 https://github.com/NiCHUY <br />
